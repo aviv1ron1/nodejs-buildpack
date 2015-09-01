@@ -32,6 +32,7 @@ source $BP_DIR/lib/environment.sh
 source $BP_DIR/lib/binaries.sh
 source $BP_DIR/lib/cache.sh
 source $BP_DIR/lib/dependencies.sh
+source $BP_DIR/lib/glassbox.sh
 
 ### Handle errors
 
@@ -57,6 +58,7 @@ create_env() {
   write_profile "$BP_DIR" "$BUILD_DIR"
   export_env_dir "$ENV_DIR"
   create_default_env
+  configure_dns_glassbox
 }
 
 header "Creating runtime environment"
